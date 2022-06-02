@@ -9,8 +9,11 @@ const Contact = () => {
                     <h1>
                         Contact me!
                     </h1>
+                    <h1>
+                        Hello!
+                    </h1>
                     <p>
-                        For any other inqueries about myself or related topics. Please send me an email or give me a call. I would love to answer all your questions to the best of my knowledge.
+                        For any other inqueries about myself or related topics. Please send me an email or give me a call.
                     </p>
                     <div className='contact-form'>
                         <form>
