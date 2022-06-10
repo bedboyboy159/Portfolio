@@ -1,7 +1,47 @@
 import './index.scss'
 import {Loader} from 'react-loaders'
+import Slider from "react-slick"
+import { useState } from "react";
+import pic1 from '../../assets/images/pic1.jpg'
+import pic2 from '../../assets/images/pic2.jpg'
+import pic3 from '../../assets/images/pic3.jpg'
+import pic4 from '../../assets/images/pic4.jpg'
+import pic5 from '../../assets/images/pic5.jpg'
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+
+const images = [pic1, pic2, pic3, pic4, pic5]
 
 const About = () => {
+
+    const NextArrow = ({ onClick }) => {
+        return (
+          <div className="arrow next" onClick={onClick}>
+            <FaArrowRight />
+          </div>
+        );
+      };
+    
+    const PrevArrow = ({ onClick }) => {
+        return (
+          <div className="arrow prev" onClick={onClick}>
+            <FaArrowLeft />
+          </div>
+        );
+    };
+    const [imageIndex, setImageIndex] = useState(0);
+  
+    const settings = {
+      infinite: true,
+      lazyLoad: true,
+      speed: 300,
+      slidesToShow: 3,
+      centerMode: true,
+      centerPadding: 0,
+      nextArrow: <NextArrow />,
+      prevArrow: <PrevArrow />,
+      beforeChange: (current, next) => setImageIndex(next),
+    };
+
     return (
         <>
             <div className='container about-page'>
@@ -18,9 +58,9 @@ const About = () => {
                     <p>
                         I'm proficient in Java, C, HTML, CSS and Javascript. At the same time, I'm trying to improve my other familar coding languages and software such as: Git, Node js, React Js, SpringBoot and MongoDB.
                     </p>
-                    <h1>
+                    <h2>
                         Skills
-                    </h1>
+                    </h2>
                     <ul>
                         <li>Data Structures and Algorithms</li>
                         <li>Software Design and Data Structures</li>
@@ -29,18 +69,20 @@ const About = () => {
                         <li>Computer Organization</li>
                     </ul>
                 </div>
-                {/* <div className='experience-zone'>
-                    <h1>
-                        Experiences
-                    </h1>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                </div> */}
+            </div>
+            <div className="App">
+                <Slider {...settings}>
+                    {images.map((img, idx) => (
+                        <div className={idx === imageIndex ? "slide activeSlide" : "slide"}>
+                            <img src={img} alt={img} />
+                        </div>
+                    ))}
+                </Slider>
             </div>
             <Loader type="pacman" />
         </>
     )
 }
+  
 
 export default About
