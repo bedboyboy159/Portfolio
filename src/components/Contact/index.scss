@@ -24,7 +24,6 @@
             animation-delay: 1.1s;
         }
     }
-
     p{
         font-style: 13px;
         color: #fff;
@@ -43,6 +42,26 @@
         &:nth-of-type(3){
             animation-delay: 1.4s;
         }
+    }
+
+}
+
+.other-contacts{
+    .text-zone{
+        top: 30%;
+        position: absolute;
+        right: 26%;
+        vertical-align: middle;
+        transform: translateY(-60%);
+        
+    }
+
+    h1{
+        color: #00ffd5;
+        font-size: 30px;
+    }
+    li{
+        font-size: 20px;
     }
 }
 
