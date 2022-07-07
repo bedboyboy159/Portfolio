@@ -1,6 +1,6 @@
 import './index.scss'
 import {Link, NavLink} from 'react-router-dom'
-import LogoS from '../../assets/images/pfp.jpg'
+import LogoS from '../../assets/images/logo.png'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faHome, faUser, faEnvelope, faFolder} from '@fortawesome/free-solid-svg-icons'
 import {
@@ -38,7 +38,7 @@ const Sidebar = () => (
                     <FontAwesomeIcon icon={faGithub} color="#4d4d4e" />
                 </a>
             </li>
-      </ul>
+        </ul>
     </div>
 )
 
